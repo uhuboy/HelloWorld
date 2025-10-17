@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <title>Hello World Input</title>
+</head>
+<body>
+  <label>ชื่อ: <input id="name" type="text" /></label>
+  <button id="btn">แสดง</button>
+  <p id="out"></p>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const out = document.getElementById('out');
+    btn.addEventListener('click', () => {
+      const name = document.getElementById('name').value.trim();
+      out.textContent = 'Hello World' + (name ? ' ' + name : '');
+    });
+  </script>
+</body>
+</html>
