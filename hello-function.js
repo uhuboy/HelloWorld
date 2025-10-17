@@ -5,13 +5,14 @@ function formatGreeting(name) {
   return 'Hello World' + (name ? ' ' + name : '');
 }
 
-function askAndGreet(promptText = 'ป้อนชื่อ: ') {
-  const rl = readline.createInterface({
+function askAndGreet(promptText) {
+  promptText = promptText || 'ป้อนชื่อ: ';
+  var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
-  rl.question(promptText, (name) => {
+  rl.question(promptText, function(name) {
     console.log(formatGreeting(name));
     rl.close();
   });
